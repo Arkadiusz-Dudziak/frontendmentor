@@ -10,7 +10,6 @@ html, body {
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    height: 100%;
 }
 
 .car_card{
@@ -75,6 +74,7 @@ button {
     border-radius: 20px;
     font-weight: 700;
     width: fit-content;
+    width: -moz-fit-content;
     border: 0px;
     margin-top: auto;
     margin-bottom: 50px;
@@ -115,6 +115,9 @@ button:hover {
     }
 }
 @media (min-width: 601px) {
+    .container {
+        height: 100%;
+    }
     .car_card:first-child {
         border-bottom-left-radius: 15px;
     }
