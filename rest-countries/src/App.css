@@ -1,0 +1,88 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+html[data-theme='dark'] {
+  --bg-color: hsl(207, 26%, 17%);
+  --elements-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --input: hsl(0, 0%, 100%);
+}
+html[data-theme='light'] {
+  --bg-color: hsl(0, 0%, 98%);
+  --elements-color: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  display: flex;
+  background-color: var(--elements-color);
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+#mode_switcher {
+  margin-left: auto;
+  margin-right: 2em;
+  cursor: pointer;
+}
+h1 {
+  margin-left: 3em;
+  font-size: 22px;
+}
+
+input {
+  color: var(--input);
+  background-color: var(--elements-color);
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  min-width: 300px;
+  padding: 8px;
+  margin-left: 5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryContainer {
+  background-color: var(--elements-color);
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.countryInfo {
+  height: 160px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.countryInfo > b {
+  font-size: large;
+  font-weight: 800;
+}
+.countryInfo .bold {
+  font-weight: 600;
+}
+.countryInfo > p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.countryInfo > p:first-of-type {
+  margin-top: 10px;
+}
