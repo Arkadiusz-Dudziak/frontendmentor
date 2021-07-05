@@ -42,17 +42,46 @@ h1 {
   font-size: 22px;
 }
 
-input {
+input, select, button {
   color: var(--input);
   background-color: var(--elements-color);
   outline: none;
   border: none;
   border-radius: 3px;
-  min-width: 300px;
-  padding: 8px;
-  margin-left: 5em;
   margin-top: 2em;
   margin-bottom: 2em;
+}
+
+button {
+  cursor: pointer;
+  min-width: 120px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.95); 
+  box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.95);
+}
+
+.smallbutton {
+  min-width: fit-content;
+  padding: 4px 15px;
+  margin-left: 8px;
+  margin-bottom: 0em;
+}
+
+input, select {
+  padding: 16px;
+}
+
+select {
+  cursor: pointer;
+  min-width: 180px;
+  position: absolute;
+  right: 0;
+  margin-right: 6%;
+}
+
+input {
+  min-width: 300px;
+  margin-left: 5em;
 }
 
 .main {
@@ -76,7 +105,7 @@ input {
   font-size: large;
   font-weight: 800;
 }
-.countryInfo .bold {
+.bold {
   font-weight: 600;
 }
 .countryInfo > p {
@@ -85,4 +114,31 @@ input {
 }
 .countryInfo > p:first-of-type {
   margin-top: 10px;
+}
+.countryDetailsComponentWrapper {
+  margin-left: 50px;
+}
+
+.countryDetailsComponent {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 100px;
+}
+
+.countryDetailsComponent h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.countryDetailsComponent p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+} 
+
+.countryDetails {
+  display: flex;
+}
+
+.countryDetails > div {
+  margin-right: 50px;
 }
