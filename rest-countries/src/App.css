@@ -60,12 +60,6 @@ button {
   box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.95);
 }
 
-.smallbutton {
-  min-width: fit-content;
-  padding: 4px 15px;
-  margin-left: 8px;
-  margin-bottom: 0em;
-}
 
 input, select {
   padding: 16px;
@@ -73,7 +67,7 @@ input, select {
 
 select {
   cursor: pointer;
-  min-width: 180px;
+  min-width: 200px;
   position: absolute;
   right: 0;
   margin-right: 6%;
@@ -93,7 +87,6 @@ input {
 .countryContainer {
   background-color: var(--elements-color);
   max-width: 300px;
-  cursor: pointer;
 }
 
 .countryInfo {
@@ -115,6 +108,8 @@ input {
 .countryInfo > p:first-of-type {
   margin-top: 10px;
 }
+
+/* country details page */
 .countryDetailsComponentWrapper {
   margin-left: 50px;
 }
@@ -141,4 +136,60 @@ input {
 
 .countryDetails > div {
   margin-right: 50px;
+}
+
+.smallbutton {
+  min-width: fit-content;
+  padding: 4px 15px;
+  margin-left: 8px;
+  margin-bottom: 0em;
+}
+
+.mobileOnly {
+  /* display: none; */
+}
+
+@media (max-width: 900px) {
+  .countryDetailsComponentWrapper {
+    margin-left: 20px;
+  }
+
+  .countryDetailsComponent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .countryDetails {
+    display: block;
+  }
+
+  .countryDetails > div {
+    margin-top: 25px;
+  }
+
+  h1 {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
+  .smallbutton {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    padding: 16px;
+    min-width: 100px;
+  }
+
+  input {
+    min-width: 100px;
+    margin-left: 1em;
+  }
+
+  select {
+    min-width: 100px;
+  }
 }

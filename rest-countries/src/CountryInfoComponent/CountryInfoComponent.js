@@ -19,7 +19,6 @@ class CountryInfoComponent extends Component {
     getCountryInfo() {
         axios.get(`https://restcountries.eu/rest/v2/name/` + this.state.countryName)
         .then(res => {
-            console.log(res.data);
             const countryData = res.data;
             this.getBorderCountriesNames(countryData[0]);
             this.setState({ countryData: countryData[0] });
@@ -49,7 +48,7 @@ class CountryInfoComponent extends Component {
                 </Link>
                 <div className="countryDetailsComponent">
                     <div>
-                        <img style={{width:"300px", height:"180px"}} src={this.state.countryData.flag} alt=""/>
+                        <img style={{width:"300px", height:"200px"}} src={this.state.countryData.flag} alt=""/>
                     </div>
                     
                     <div>
@@ -65,28 +64,29 @@ class CountryInfoComponent extends Component {
                             <div>
                                 <p>
                                     {
-                                        this.state.countryData.topLevelDomain?.length!=1?
+                                        this.state.countryData.topLevelDomain?.length!==1?
                                         <span className="bold">Top Level Domains: </span>:
                                         <span className="bold">Top Level Domain: </span>
                                     }
                                     {this.state.countryData.topLevelDomain?.join(' ')}
                                 </p>
                                 <p><span className="bold">Curriencies: </span>{this.state.countryData.currencies?.map((currency, index) => (
-                                    <>{index!=0?", ": null}{currency.name}</>
+                                    <>{index!==0?", ": null}{currency.name}</>
                                 ))}</p>
                                 <p><span className="bold">Languages: </span>{this.state.countryData.languages?.map((language, index)=> (
-                                    <>{index!=0?", ": null}{language.name}</>
+                                    <>{index!==0?", ": null}{language.name}</>
                                 ))}</p>
                             </div>
                         </div>
                         <p><span className="bold">Border Countries: </span>
+                        <p className="mobileOnly"></p>
                         {this.state.countryBorders?.map((borderCountry, index) => (
                             <Link to={`/country/${borderCountry.toLowerCase()}`}>
                                 <button className="smallbutton" onClick={()=>this.setState({countryName: borderCountry}, () => window.location.reload())}>{borderCountry}</button>
                             </Link>
                         ))}
                         </p>
-                        
+
                     </div>
                 </div>
             </div>

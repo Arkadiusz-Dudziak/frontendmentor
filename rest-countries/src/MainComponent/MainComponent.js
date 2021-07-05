@@ -14,8 +14,8 @@ function MainComponent() {
         value={inputCountryValue}
         onChange={e => setCountryName(e.target.value)}
         />
-        <select id="regionFilter" value={selectedRegion} onChange={e => setRegion(e.target.value)}>
-        <option value="" selected disabled hidden>
+        <select id="regionFilter" defaultValue="" value={selectedRegion} onChange={e => setRegion(e.target.value)}>
+        <option value="" disabled hidden>
             Filter by Region
         </option>
         <option value="Africa">Africa</option>

@@ -15,7 +15,6 @@ class CountriesComponent extends Component {
     getAllCountries() {
         axios.get(`https://restcountries.eu/rest/v2/all`)
         .then(res => {
-            console.log(res.data);
             const countriesData = res.data;
             this.setState({ countriesData: countriesData });
         })

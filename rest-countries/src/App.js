@@ -1,14 +1,10 @@
 import './App.css';
 import moon_icon from './icons/moon.png';
-import CountriesComponent from './CountriesComponent/CountriesComponent';
 import CountryInfoComponent from './CountryInfoComponent/CountryInfoComponent';
-import { useState } from 'react';
 import MainComponent from './MainComponent/MainComponent';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 function switchMode() {
   let currentTheme = document.documentElement.getAttribute('data-theme');
