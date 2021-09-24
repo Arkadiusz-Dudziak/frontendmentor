@@ -27,14 +27,14 @@ class CountriesComponent extends Component {
                 return <CountryComponent countryData = {countryData}/>
             } else {
                 if(this.props.inputCountryValue!=="" && this.props.selectedRegion!=="") {
-                    if(countryData.name.includes(this.props.inputCountryValue) && countryData.region.includes(this.props.selectedRegion))
+                    if(countryData.name.includes(this.props.inputCountryValue) && countryData.continent.includes(this.props.selectedRegion))
                         return <CountryComponent countryData = {countryData}/>
                 } else {
                     if(this.props.inputCountryValue!=="" && this.props.selectedRegion==="")
                         if(countryData.name.includes(this.props.inputCountryValue))
                             return <CountryComponent countryData = {countryData}/>
                     if(this.props.inputCountryValue==="" && this.props.selectedRegion!=="")
-                        if(countryData.region === this.props.selectedRegion)
+                        if(countryData.continent === this.props.selectedRegion)
                             return <CountryComponent countryData = {countryData}/>
                 }
             }
