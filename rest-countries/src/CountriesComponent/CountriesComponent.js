@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import CountryComponent from '../CountryComponent/CountryComponent';
 import './CountriesComponent.css'
+import { CommonLoading } from 'react-loadingg';
 
 class CountriesComponent extends Component {
     constructor() {
         super();
-        this.state = {countriesData: []};
+        this.state = {countriesData: [], dataLoaded: false};
     }
     componentDidMount() {
         this.getAllCountries();
     }
 
     getAllCountries() {
-        axios.get(`https://restcountries.eu/rest/v2/all`)
+        axios.get(`https://restcountries.com/v2/all`)
         .then(res => {
             const countriesData = res.data;
-            this.setState({ countriesData: countriesData });
+            this.setState({ countriesData: countriesData, dataLoaded: true });
         })
     }
 
@@ -38,12 +39,15 @@ class CountriesComponent extends Component {
                 }
             }
         });
-        
-        return (
-            <div className="countriesGrid">
-                {countries}
-            </div>
-          );
+        if(!this.state.dataLoaded) {
+            return <CommonLoading />;
+        } else {
+            return (
+                <div className="countriesGrid">
+                    {countries}
+                </div>
+              );
+        }
     }
 }
 
