@@ -30,7 +30,7 @@ class CountryInfoComponent extends Component {
     }
 
     getBorderCountriesNames(countryData) {
-        countryData.borders.forEach(borderCountryCode => {
+        countryData.borders?.forEach(borderCountryCode => {
             axios.get(`https://restcountries.com/v3/alpha/` + borderCountryCode)
             .then(res => {
                 this.setState(prevState => ({
@@ -58,7 +58,7 @@ class CountryInfoComponent extends Component {
                     </Link>
                     <div className="countryDetailsComponent">
                         <div>
-                            <img style={{width:"300px", height:"200px"}} src={this.state.countryData.flags[0]} alt=""/>
+                            <img style={{width:"300px", height:"200px"}} src={this.state.countryData.flag} alt=""/>
                         </div>
                         
                         <div>
@@ -88,7 +88,13 @@ class CountryInfoComponent extends Component {
                                     ))}</p>
                                 </div>
                             </div>
-                            <p><span className="bold">Border Countries: </span>
+                            <p><span className="bold">
+                                {this.state.countryBorders.length!=0?
+                                "Border Countries:"
+                                :
+                                "No Border Countries"
+                                }
+                                </span>
                             <p className="mobileOnly"></p>
                             {this.state.countryBorders?.map((borderCountry, index) => (
                                 <Link to={`/country/${borderCountry.toLowerCase()}`}>

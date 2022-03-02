@@ -7,7 +7,7 @@ class CountryComponent extends Component {
                 <div>
                     <div className="countryContainer" name={this.props.countryData.name.toLowerCase()}>
                         <Link to={`/country/${this.props.countryData.name.toLowerCase()}`}>
-                            <img style={{width:"300px", height:"200px"}} src={this.props.countryData.flags[0]}
+                            <img style={{width:"300px", height:"200px"}} src={this.props.countryData.flag}
                                 alt=""/>
                         </Link>
                         <div className="countryInfo">
